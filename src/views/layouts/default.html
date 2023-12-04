@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>{{ title }}</title>
+
+    <!-- load source favicon via Webpack alias '@images' -->
+    <link href="@images/favicon.png" rel="icon" type="image/png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+    <!-- load global source script via Webpack alias '@scripts' -->
+    <script src="@scripts/common.js" defer="defer"></script>
+   
+
+    <!-- block for specific page styles -->
+    {% block styles %}{% endblock %}
+  </head>
+  <body>
+    <!-- Header -->
+   <div class="dashboard_layout">
+    {% include "src/views/partials/header/index.html" %}
+
+   <!-- Main content -->
+   {% include "src/views/partials/sidebar/index.html" %}
+
+   {% block content %}{% endblock %}
+   </div>
+   
+
+    {% block scripts %}
+    {% endblock %}
+  </body>
+</html>
