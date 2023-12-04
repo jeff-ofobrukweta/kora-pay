@@ -1,0 +1,162 @@
+.navbar {
+  grid-area: navbar;
+  background: #ffffff;
+  opacity: 0.97;
+  border: 1px solid #eeeeee;
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.05);
+  filter: drop-shadow(0px 3.2px 8px rgba(0, 0, 0, 0.1));
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem 1rem 0;
+}
+.navbar.searching .user-options,
+.navbar.searching .logo-container,
+.navbar.searching .mobile-sidebar-toggle {
+  display: none;
+}
+.navbar.searching .search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.navbar.searching .search .search-back {
+  display: block;
+  margin: 0 1rem;
+}
+.navbar.searching .search .search-filter {
+  display: flex;
+  width: 100%;
+}
+.navbar .mobile-sidebar-toggle {
+  cursor: pointer;
+}
+.navbar .logo-container .logo {
+  width: 40px;
+  height: 40px;
+}
+.navbar .search {
+  flex: 1;
+}
+.navbar .logo-container .details {
+  display: none;
+}
+.navbar .search .search-back {
+  display: none;
+  cursor: pointer;
+}
+.navbar .search .search-filter {
+  position: relative;
+  display: none;
+  border: 1px solid #dddddd;
+  height: 40px;
+  padding-right: 3rem;
+}
+.navbar .search .search-filter input {
+  width: 100%;
+  padding: 0 0.5rem;
+  outline: 0;
+  border: 0;
+}
+.navbar .search .search-filter .icon-area {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  border-left: 1px solid #dddddd;
+  background: #f9f9fb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+}
+.navbar .search .search-filter .autocomplete-container {
+  position: absolute;
+  width: 100%;
+  height: fit-content;
+  height: -moz-fit-content;
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.05);
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 100%;
+}
+.navbar .search .search-filter .autocomplete-container .autoCompleteList {
+  margin: 0;
+  padding: 10px;
+  list-style: none;
+}
+.navbar .search .search-filter .autocomplete-container .autoCompleteList li {
+  font-size: 14px;
+  line-height: 16px;
+  margin: 2rem 0;
+  color: #999999;
+  cursor: pointer;
+}
+.navbar .search .search-filter .autocomplete-container .autoCompleteList li span {
+  color: #000000;
+}
+.navbar .user-options {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.navbar .user-options .mobile-search-toggle {
+  display: block;
+  cursor: pointer;
+}
+.navbar .user-options .option-icon img {
+  width: 25px;
+  height: 25px;
+  margin: 0 1.5rem;
+}
+.navbar .user-options .user {
+  border-radius: 50%;
+  object-fit: contain;
+  height: 40px;
+  width: 40px;
+}
+
+@media only screen and (min-width: 46.875em) {
+  .navbar {
+    padding: 1rem 2.2rem;
+    filter: none;
+    z-index: 4;
+  }
+  .navbar .logo-container .logo {
+    width: 50px;
+    height: 50px;
+  }
+  .navbar .logo-container .details {
+    display: block;
+  }
+  .navbar .mobile-sidebar-toggle {
+    display: none;
+  }
+  .navbar .search .search-filter {
+    display: flex;
+  }
+  .navbar .user-options .mobile-search-toggle {
+    display: none;
+  }
+  .navbar .user-options .option-icon img {
+    width: 30px;
+    height: 30px;
+  }
+  .navbar .user-options .user {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media only screen and (min-width: 85em) {
+  .navbar .search {
+    width: 501px;
+    flex: unset;
+  }
+}

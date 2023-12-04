@@ -1,0 +1,750 @@
+@use '@styles/main.scss';
+@use '@styles/abstracts/_variables.scss' as var;
+
+.main {
+	grid-area: main;
+	background-color: #ffffff;
+	overflow-y: scroll;
+	padding: 2rem 0;
+	.ml-2 {
+		margin-left: 2.5rem;
+	}
+	section {
+		padding-right: 2rem;
+		padding-left: 2rem;
+	}
+	.carousel-section {
+		margin-bottom: 5rem;
+		padding: 0;
+		.carousel {
+			.carousel-cell {
+				.carousel-item {
+					position: relative;
+					margin-right: 0.5rem;
+					img {
+						width: 140px;
+						height: 210px;
+					}
+					.details-toggle {
+						position: absolute;
+						top: 1rem;
+						right: 0.5rem;
+						cursor: pointer;
+						width: 27px;
+						height: 27px;
+					}
+					.close-details {
+						position: absolute;
+						top: 1rem;
+						right: 0.5rem;
+						cursor: pointer;
+						width: 27px;
+						height: 27px;
+						display: none;
+						height: 12px;
+						width: 12px;
+					}
+					.overlay {
+						position: absolute;
+						display: none;
+						width: 100%;
+						height: 100%;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						background: linear-gradient(180deg, rgba(0, 0, 0, 0.607988) 0%, #000000 79.7%);
+						cursor: pointer;
+					}
+					.details {
+						display: none;
+						padding: 0.2rem 1rem;
+						position: absolute;
+						top: 1.5rem;
+						color: #ffffff;
+						z-index: 1;
+						p {
+							margin: 0.3rem 0;
+						}
+						.status {
+							font-size: 12px;
+							line-height: 15px;
+							margin-top: 0;
+						}
+						.status.available {
+							color: #65c100;
+						}
+						.status.borrowedout {
+							color: #d0011b;
+						}
+						.name {
+							font-size: 14px;
+							line-height: 16px;
+							margin: 0.5rem 0 0.3rem 0;
+							width: 115px;
+							overflow: hidden;
+							text-overflow: ellipsis;
+							white-space: nowrap;
+						}
+						.author-type {
+							font-size: 12px;
+							line-height: 15px;
+						}
+						.type {
+							font-size: 12px;
+							line-height: 15px;
+							margin-bottom: 0.3rem;
+							display: none;
+							align-items: center;
+							h3 {
+								font-size: 12px;
+								margin: 0;
+							}
+							span {
+								margin: 0 0.2rem;
+							}
+						}
+						.year {
+							font-size: 12px;
+							line-height: 15px;
+							margin-bottom: 0.3rem;
+							display: flex;
+							align-items: center;
+							h3 {
+								margin: 0 0.1rem 0.2rem 0;
+							}
+							span {
+								margin-left: 0.5rem;
+								font-size: 14px;
+								font-weight: 600;
+							}
+						}
+						.labels {
+							font-size: 12px;
+							line-height: 15px;
+							margin-bottom: 0.3rem;
+							display: none;
+							align-items: center;
+							h3 {
+								font-size: 12px;
+								margin: 0;
+							}
+							span {
+								margin: 0 0.2rem;
+							}
+						}
+						.author {
+							font-size: 12px;
+							line-height: 15px;
+							width: 115px;
+							overflow: hidden;
+							text-overflow: ellipsis;
+							white-space: nowrap;
+						}
+						.ratings_socials {
+							display: flex;
+							flex-direction: column;
+							.ratings {
+								margin-right: 1rem;
+								padding-right: 1rem;
+								p {
+									font-size: 12px;
+									line-height: 14px;
+									margin: 0;
+								}
+								.rate {
+									height: 10px;
+									input {
+										&:checked {
+											~ {
+												label {
+													color: #eba430;
+													&:hover {
+														color: #eba430;
+														~ {
+															label {
+																color: #eba430;
+															}
+														}
+													}
+												}
+											}
+											+ {
+												label {
+													&:hover {
+														color: #eba430;
+														~ {
+															label {
+																color: #eba430;
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+									label {
+										&:hover {
+											~ {
+												input {
+													&:checked {
+														~ {
+															label {
+																color: #eba430;
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+									&:not(:checked) {
+										input {
+											position: absolute;
+											top: -9999px;
+										}
+										label {
+											float: right;
+											width: 1em;
+											overflow: hidden;
+											white-space: nowrap;
+											cursor: pointer;
+											font-size: 12px;
+											color: #ccc;
+											&:before {
+												content: '★ ';
+											}
+											&:hover {
+												color: #eba430;
+												~ {
+													label {
+														color: #eba430;
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+							.socials {
+								.social-icons {
+									display: flex;
+									flex-direction: row;
+									align-items: center;
+									.likes {
+										height: 9px;
+										width: 10px;
+									}
+									.users {
+										height: 11px;
+										width: 15px;
+										margin: 0 0.5rem 0 0;
+									}
+								}
+								.num {
+									font-size: 12px;
+									line-height: 14px;
+								}
+								.num.first {
+									margin-right: 0.5rem;
+								}
+							}
+						}
+						.rate {
+							width: fit-content;
+							margin-bottom: 0.8rem;
+							height: 10px;
+							input {
+								&:checked {
+									~ {
+										label {
+											color: #eba430;
+											&:hover {
+												color: #eba430;
+												~ {
+													label {
+														color: #eba430;
+													}
+												}
+											}
+										}
+									}
+									+ {
+										label {
+											&:hover {
+												color: #eba430;
+												~ {
+													label {
+														color: #eba430;
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+							label {
+								&:hover {
+									~ {
+										input {
+											&:checked {
+												~ {
+													label {
+														color: #eba430;
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+							&:not(:checked) {
+								input {
+									position: absolute;
+									top: -9999px;
+								}
+								label {
+									float: right;
+									width: 1em;
+									overflow: hidden;
+									white-space: nowrap;
+									cursor: pointer;
+									font-size: 12px;
+									color: #ccc;
+									&:before {
+										content: '★ ';
+									}
+									&:hover {
+										color: #eba430;
+										~ {
+											label {
+												color: #eba430;
+											}
+										}
+									}
+								}
+							}
+						}
+						.book-list {
+							.book-item {
+								.book-details {
+									.type {
+										font-size: 12px;
+										line-height: 15px;
+										color: #000000;
+									}
+									.year {
+										font-size: 12px;
+										line-height: 15px;
+										color: #000000;
+									}
+									.labels {
+										font-size: 12px;
+										line-height: 15px;
+										color: #000000;
+									}
+									.author {
+										font-size: 12px;
+										line-height: 15px;
+										color: #000000;
+									}
+								}
+							}
+						}
+					}
+				}
+				.carousel-item.active {
+					.close-details {
+						display: block;
+					}
+					.details-toggle {
+						display: none;
+					}
+					.overlay {
+						display: block;
+					}
+					.details {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+	.section-header {
+		font-size: 14px;
+		line-height: 16px;
+		letter-spacing: 3px;
+		color: #000000;
+		padding-bottom: 0.3rem;
+		border-bottom: 1px solid rgba(238, 238, 238, 0.5);
+	}
+	.book-list {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		.book-item {
+			display: flex;
+			flex-direction: row;
+			flex-basis: 100%;
+			flex-grow: 1;
+			align-items: center;
+			margin: 1rem 0;
+			.book-cover {
+				margin-right: 0.5rem;
+			}
+			.book-details {
+				p {
+					margin: 0.1rem 0;
+				}
+				.status {
+					font-size: 12px;
+					line-height: 15px;
+					margin-top: 0;
+				}
+				.status.available {
+					color: #65c100;
+				}
+				.status.borrowedout {
+					color: #d0011b;
+				}
+				.name {
+					font-size: 14px;
+					line-height: 16px;
+					color: #000000;
+					margin-bottom: 0.3rem;
+					width: 115px;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+				}
+				.author-type {
+					font-size: 12px;
+					line-height: 15px;
+					color: #000000;
+				}
+				.carousel-section {
+					.carousel {
+						.carousel-cell {
+							.carousel-item {
+								.details {
+									.type {
+										font-size: 12px;
+										line-height: 15px;
+										color: #000000;
+									}
+									.year {
+										font-size: 12px;
+										line-height: 15px;
+										color: #000000;
+									}
+									.labels {
+										font-size: 12px;
+										line-height: 15px;
+										color: #000000;
+									}
+									.author {
+										font-size: 12px;
+										line-height: 15px;
+										color: #000000;
+									}
+								}
+							}
+						}
+					}
+				}
+				.type {
+					font-size: 12px;
+					line-height: 15px;
+					color: #000000;
+					margin-bottom: 0.3rem;
+				}
+				.year {
+					font-size: 12px;
+					line-height: 15px;
+					color: #000000;
+					margin-bottom: 0.3rem;
+				}
+				.author {
+					font-size: 12px;
+					line-height: 15px;
+					color: #000000;
+				}
+				.ratings_socials {
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					.ratings {
+						margin-right: 0.8rem;
+						padding-right: 0.8rem;
+						border-right: 1px solid #dddddd;
+						p {
+							font-size: 12px;
+							line-height: 14px;
+						}
+						.rate {
+							height: 10px;
+							input {
+								&:checked {
+									~ {
+										label {
+											color: #eba430;
+											&:hover {
+												color: #eba430;
+												~ {
+													label {
+														color: #eba430;
+													}
+												}
+											}
+										}
+									}
+									+ {
+										label {
+											&:hover {
+												color: #eba430;
+												~ {
+													label {
+														color: #eba430;
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+							label {
+								&:hover {
+									~ {
+										input {
+											&:checked {
+												~ {
+													label {
+														color: #eba430;
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+							&:not(:checked) {
+								input {
+									position: absolute;
+									top: -9999px;
+								}
+								label {
+									float: right;
+									width: 1em;
+									overflow: hidden;
+									white-space: nowrap;
+									cursor: pointer;
+									font-size: 12px;
+									color: #ccc;
+									&:before {
+										content: '★ ';
+									}
+									&:hover {
+										color: #eba430;
+										~ {
+											label {
+												color: #eba430;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					.socials {
+						.social-icons {
+							display: flex;
+							flex-direction: row;
+							align-items: center;
+							.likes {
+								height: 9px;
+								width: 10px;
+							}
+							.users {
+								height: 11px;
+								width: 15px;
+								margin: 0 0.5rem 0 0;
+							}
+						}
+						.num {
+							font-size: 12px;
+							line-height: 14px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.prev-next-bg {
+	background: linear-gradient(180deg, rgba(248, 248, 250, 0.8) 0%, #f8f8fa 51.36%, rgba(248, 248, 250, 0.8) 100%);
+	mix-blend-mode: normal;
+	opacity: 0.8;
+}
+.flickity-button {
+	background: linear-gradient(180deg, rgba(248, 248, 250, 0.8) 0%, #f8f8fa 51.36%, rgba(248, 248, 250, 0.8) 100%);
+	mix-blend-mode: normal;
+	opacity: 0.8;
+	&:hover {
+		background: linear-gradient(180deg, rgba(248, 248, 250, 0.8) 0%, #f8f8fa 51.36%, rgba(248, 248, 250, 0.8) 100%);
+		mix-blend-mode: normal;
+		opacity: 0.8;
+	}
+	.flickity-button-icon {
+		position: absolute;
+		left: 29%;
+		top: 43%;
+		width: 10px;
+		height: 15px;
+	}
+}
+.flickity-prev-next-button.previous {
+	left: 0;
+	height: 100%;
+	border-radius: 0;
+	width: 40px;
+	border-right: 1px solid #ffffff;
+}
+.flickity-prev-next-button.next {
+	width: 40px;
+	right: 0;
+	border-radius: 0;
+	height: 100%;
+	border-left: 1px solid #ffffff;
+}
+.flickity-page-dots {
+	bottom: 0px;
+	.dot {
+		width: 8px;
+		height: 8px;
+		margin: 0 4px;
+	}
+	.dot.is-selected {
+		opacity: 1;
+		background: #65c100;
+	}
+}
+.flickity-slide {
+	height: 250px;
+}
+
+
+@media only screen and (min-width: 992px) {
+	.main {
+		.carousel-section {
+			margin-bottom: 5rem;
+			padding: 0;
+			.carousel {
+				.carousel-cell {
+					.carousel-item {
+						margin-right: 1rem;
+						img {
+							width: unset;
+							height: unset;
+						}
+						.details-toggle {
+							display: none;
+						}
+						.details {
+							.status {
+								margin-top: 4rem;
+							}
+							.name {
+								width: 300px;
+								font-size: 14px;
+								line-height: 21px;
+								margin-top: 1.2rem;
+							}
+							.type {
+								display: flex;
+							}
+							.labels {
+								display: flex;
+							}
+							.author {
+								width: 300px;
+							}
+							.ratings_socials {
+								flex-direction: row;
+								align-items: center;
+								.ratings {
+									border-right: 1px solid #333333;
+									.rate {
+										margin-bottom: unset;
+										&:not(:checked) {
+											label {
+												font-size: 15px;
+											}
+										}
+									}
+								}
+								.socials {
+									.social-icons {
+										.likes {
+											width: 17px;
+											height: 15px;
+										}
+										.users {
+											width: 20px;
+											height: 15px;
+										}
+									}
+									.num.first {
+										margin-right: 0.9rem;
+										margin-left: 0.2rem;
+									}
+								}
+							}
+						}
+					}
+					&:hover {
+						.details {
+							display: block;
+						}
+						.overlay {
+							display: block;
+						}
+					}
+				}
+			}
+		}
+		.book-list {
+      gap: 1rem;
+			.book-item {
+				flex-basis: 48%;
+        .book-details{
+          	padding: 0 0.5rem;
+						height: 100%;
+						width: 100%;
+						margin-right: 1rem;
+            .status{
+              margin-top: 1rem;
+            }
+        }
+        &:hover{
+          background: #ffffff;
+						box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.15);
+        }
+			}
+		}
+	}
+	.flickity-slide {
+		height: 350px;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.main {
+		.book-list {
+      gap: 1rem;
+			.book-item {
+				flex-basis: 32%;
+			}
+		}
+	}
+}
+

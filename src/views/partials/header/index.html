@@ -1,0 +1,29 @@
+<header id="navbar" class="navbar">
+  <img src="@images/icons/hamburger.svg" class="mobile-sidebar-toggle" onclick="openSidebar()">
+  <div class="logo-container">
+    <img class="logo" alt="logo">
+    <div class="details">
+      <p class="site-name">Korapay Book Club</p>
+      <p class="user">Admin</p>
+    </div>
+  </div>
+  <div class="search">
+    <img class="search-back" onclick="closeMobileSearch()" alt="back" src="@images/icons/arrow-left.svg">
+    <div id="search-filter" class="search-filter">
+      <input type="text" id="autocomplete-input" onkeyup="handleChange(this.value)" placeholder="Search books, genres, authors, etc.">
+      <div class="icon-area">
+        <img src="@images/icons/search-icon.svg" alt="icon-search">
+      </div>
+    </div>
+  </div>
+  <div class="user-options">
+    <img class="mobile-search-toggle" onclick="openMobileSearch()" src="@images/icons/search-icon.svg" alt="search-icon">
+    <div class="option-icon">
+      <img src="@images/icons/libraries.svg" alt="libraries">
+    </div>
+    <div class="option-icon">
+      <img src="@images/icons/notification.svg" alt="bell">
+    </div>
+    <img class="user" src="@images/icons/user.svg" alt="user">
+  </div>
+</header>
