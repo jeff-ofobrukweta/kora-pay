@@ -311,18 +311,6 @@ let filteredBooks = recentBooks;
 let sidebar = document.getElementById('sidebar');
 let navbar = document.getElementById('navbar');
 
-const closeSidebar = () => {
-  sidebar.classList.remove('active');
-};
-const openSidebar = () => {
-  sidebar.classList.add('active');
-};
-const openMobileSearch = () => {
-  navbar.classList.add('searching');
-};
-const closeMobileSearch = () => {
-  navbar.classList.remove('searching');
-};
 const openBookDetails = (id) => {
   let carouselItem = document.getElementById(id);
   carouselItem.classList.add('active');
