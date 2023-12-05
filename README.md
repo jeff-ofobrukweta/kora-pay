@@ -3,8 +3,8 @@
 ## Installation
 
 ```
-git clone https://github.com/webdiscus/webpack-html-scss-boilerplate.git
-cd webpack-html-scss-boilerplate
+git clone https://github.com/jeff-ofobrukweta/kora-pay.git
+cd kora-pay
 npm i
 ```
 
