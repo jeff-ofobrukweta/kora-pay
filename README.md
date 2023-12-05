@@ -1,4 +1,10 @@
-# Kora Project
+# Kora Project 
+```
+Any assumptions you have made about any part of the assessment. It is good to
+explain your thought process and the assumptions you have made.
+```
+
+using web bundler like i.e webpack this helps to build the scss outside the box, i.e sass-loader and also helps in the partials-component design approach
 
 ## Installation
 
